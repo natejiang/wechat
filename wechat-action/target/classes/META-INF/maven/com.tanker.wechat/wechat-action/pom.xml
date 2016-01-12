@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.tanker.wechat</groupId>
+    <artifactId>wechat-parent</artifactId>
+    <relativePath>../wechat-parent/pom.xml</relativePath>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>wechat-action</artifactId>
+  <name>wechat-action</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+  	<!-- wechat-util模块 -->
+  	<dependency>
+	   <groupId>${project.groupId}</groupId>
+	   <artifactId>wechat-util</artifactId>
+	   <version>${project.version}</version>
+	</dependency>    
+  	<!-- struts2核心包 -->
+	<dependency>
+	   <groupId>org.apache.struts</groupId>
+	   <artifactId>struts2-core</artifactId>
+	</dependency>  
+	<!-- 在 Struts2中要使用 Ajax获得Json数据。要使用Ajax必须引用此Jar -->
+	<dependency> 
+ 	   <groupId>org.apache.struts</groupId> 
+	   <artifactId>struts2-json-plugin</artifactId> 
+	</dependency>      
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.tanker.wechat</groupId>
+    <artifactId>wechat-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../wechat-parent/pom.xml</relativePath>
+  </parent>
+  <artifactId>wechat-web</artifactId>
+  <packaging>war</packaging>
+  <name>wechat-web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+  <!-- wechat-action模块 -->
+  	<dependency>
+	   <groupId>${project.groupId}</groupId>
+	   <artifactId>wechat-action</artifactId>
+	   <version>${project.version}</version>
+	</dependency>    
+    <!-- jsp接口 -->
+    <dependency> 
+	  <groupId>javax.servlet.jsp</groupId> 
+      <artifactId>jsp-api</artifactId> 
+    </dependency>
+	<!-- servlet接口 -->
+	<dependency> 
+	    <groupId>javax.servlet</groupId> 
+	    <artifactId>servlet-api</artifactId> 
+	</dependency>
+	<!-- struts2核心包 -->
+	<dependency>
+	   <groupId>org.apache.struts</groupId>
+	   <artifactId>struts2-core</artifactId>
+	</dependency>  
+	<!-- 在 Struts2中要使用 Ajax获得Json数据。要使用Ajax必须引用此Jar -->
+	<dependency> 
+ 	   <groupId>org.apache.struts</groupId> 
+	   <artifactId>struts2-json-plugin</artifactId> 
+	</dependency>      
+	<!-- struts2与spring整合的包 -->
+	<dependency> 
+	   <groupId>org.apache.struts</groupId> 
+	   <artifactId>struts2-spring-plugin</artifactId> 
+	</dependency>
+	<!-- spring4 -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+	</dependency>	
+	<dependency>
+    	<groupId>org.springframework.data</groupId>
+    	<artifactId>spring-cql</artifactId>
+	</dependency>
+	<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-expression</artifactId>
+	</dependency>
+	<!-- Hiberante -->   
+    <dependency>
+    	<groupId>org.hibernate.javax.persistence</groupId>
+		<artifactId>hibernate-jpa-2.1-api</artifactId>
+    </dependency>
+    <dependency>  
+        <groupId>org.hibernate</groupId>  
+        <artifactId>hibernate-core</artifactId>  
+    </dependency>  
+    <dependency>  
+        <groupId>org.hibernate.common</groupId>
+		<artifactId>hibernate-commons-annotations</artifactId>  
+    </dependency>
+	<!-- log4j -->
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+	</dependency>	
+	<!-- aop -->
+	<dependency> 
+	   <groupId>org.aspectj</groupId> 
+	   <artifactId>aspectjweaver</artifactId> 
+	</dependency>	
+	<!-- junit -->
+    <dependency>
+    	<groupId>junit</groupId>
+    	<artifactId>junit</artifactId>
+   	 	<scope>test</scope>
+    </dependency>
+    <!-- c3p0 -->
+    <dependency>
+    	<groupId>c3p0</groupId>
+    	<artifactId>c3p0</artifactId>
+    </dependency>
+	<dependency>
+  		<groupId>javax.transaction</groupId>
+  		<artifactId>jta</artifactId>
+	</dependency>
+	<dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+    </dependency>
+    <dependency> 
+	  <groupId>org.slf4j</groupId>
+  	  <artifactId>slf4j-api</artifactId>
+	</dependency>
+  </dependencies>
+  <build>
+    <finalName>wechat-web</finalName>
+    <plugins>
+ 		 <plugin>
+  				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<container>
+						<containerId>tomcat8x</containerId>
+						<type>remote</type>
+					</container>
+					<configuration>
+						<type>runtime</type>
+						<properties>
+							<cargo.remote.username>jiangnan</cargo.remote.username>
+							<cargo.remote.password>Tanker20120828</cargo.remote.password>
+							<cargo.remote.manager.url>http://222.35.41.78:8080/manager</cargo.remote.manager.url>
+						</properties>					
+					</configuration>
+				</configuration>  
+ 		 </plugin>
+  </plugins>
+  </build>
+  
+</project>
